@@ -2,14 +2,14 @@
  * @file TimeEvent.h
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 1.0.3
+ * @version 1.0.4
  * @date 19-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
  * 
  */
-#ifndef TimeEvent_h
-#define TimeEvent_h
+#ifndef GeoGabTimeEvent_h
+#define GeoGabTimeEvent_h
 
 #include <Arduino.h>            // Standard Library
 #include <functional>           // To overhand a "function" to another as parameter
@@ -17,7 +17,7 @@
 
 using namespace std;
 
-#define TIMEEVENT_VERSION "1.0.3"
+#define TIMEEVENT_VERSION "1.0.4"
 
 enum  {
   TE_ERROR_NONE=0,                        // 0000 0000: Perfect :-)           

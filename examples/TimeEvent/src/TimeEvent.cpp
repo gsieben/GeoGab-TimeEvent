@@ -28,15 +28,15 @@ void setup() {
 
 /****** Main Loop ******/
 void loop() {
-  tevent.Reset();                           // Must always be placed at the beginning of a loop
+  tevent.Reset();                     // Must always be placed at the beginning of a loop
 
-  tevent.Check(1000, 0, test);              // Executes function 1 every second
+  tevent.Check(1000, 0, test);        // Executes function 1 every second
 
-  tevent.Check(1000, 100, test2);           // Executes function 2 every second. It is delayed by 100 milliseconds from the previous one 
+  tevent.Check(1000, 100, test2);     // Executes function 2 every second. It is delayed by 100 milliseconds from the previous one 
 
-  tevent.Check(10000, 0, test3);            // Executes the function every 10 seconds
+  tevent.Check(10000, 0, test3);      // Executes the function every 10 seconds
 
-  if(tevent.Check(500, 0)) {                // function within if - every 0,5 seconds
+  if(tevent.Check(500, 0)) {          // function within if - every 0,5 seconds
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
   }
 }
@@ -55,3 +55,4 @@ void test2() {
 void test3() {
   Serial.println("-------------------");
 }
+

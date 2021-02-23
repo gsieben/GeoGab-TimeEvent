@@ -1,6 +1,6 @@
 {
   "name": "GeoGab-TimeEvent",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Very simple library which starts a function after a certain timeout including an offset.",
   "keywords": ["EventTimer", "Timer"],
   "repository":
@@ -22,8 +22,8 @@
         "name": "Time Event",
         "base": "examples/TimeEvent",
         "files": [
-            "src/TimeEventExample.cpp",
-            "src/TimeEventExample.h"
+            "src/TimeEvent.cpp",
+            "src/TimeEvent.h"
           ]
     },
     {

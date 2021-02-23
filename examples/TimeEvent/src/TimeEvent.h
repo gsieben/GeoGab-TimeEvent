@@ -12,7 +12,7 @@
 #define TimeEventExample_h
 
 #include <Arduino.h>
-#include <TimeEvent.h>
+#include <GeoGabTimeEvent.h>
 
 
 

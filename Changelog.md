@@ -1,3 +1,6 @@
+# Version 1.0.4
+- Minor Bug Fix: Wrong error handling
+
 # Version 1.0.3
 - Updated to support longer timeframes (uint32_t)
 
@@ -5,7 +8,7 @@
 - Added basic runtime calculations
  
 # Version 1.0.1
-- Minor Bug Fixes: example/platform.ini was wrong
+- Minor Bug Fix: example/platform.ini was wrong
 
 # Version 1.0.0
 - First Release
