@@ -2,7 +2,7 @@
  * @file TimeEvent.cpp
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 1.0.2
+ * @version 1.0.3
  * @date 19-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
@@ -30,7 +30,7 @@ void TimeEvent::Reset() {
  * @param funct Function that is to be executed. No parameters are passed. 
  * @return Error Value; 0=No Error
  */
-bool TimeEvent::Check(const uint16_t &every, const uint16_t &offset, function<void (void)> funct) {
+bool TimeEvent::Check(const uint32_t &every, const uint32_t &offset, function<void (void)> funct) {
     if(error) return error;                                         // Do nothing once there is a error
     ActStamp=millis();
     if (ActStamp - offset - PrevStamp[SlotIndex] >= every) {
@@ -53,7 +53,7 @@ bool TimeEvent::Check(const uint16_t &every, const uint16_t &offset, function<vo
  * @return true 
  * @return false 
  */
-bool TimeEvent::Check(const uint16_t &every, const uint16_t &offset=0) {
+bool TimeEvent::Check(const uint32_t &every, const uint32_t &offset=0) {
     uint8_t retval=0;
     if(error) return 0;                                             // Do nothing once there is a error
     ActStamp=millis();

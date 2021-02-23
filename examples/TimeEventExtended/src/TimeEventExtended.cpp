@@ -2,7 +2,7 @@
  * @file TimeEventExtended.cpp
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 1.0.0
+ * @version 1.0.1
  * @date 23-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
@@ -21,7 +21,8 @@ void test3();
 void setup() {
   Serial.begin(115200);
   Serial.println("\r\n### S T A R T ###");
-  delay(500);   // Crash delay
+  delay(500);                         // Crash delay
+  pinMode(LED_BUILTIN, OUTPUT);       // Internal LED 
 }
 
 
@@ -35,8 +36,8 @@ void loop() {
 
   tevent.Check(10000, 0, test3);      // Executes the function every 10 seconds
 
-  if(tevent.Check(30000, 0)) {        // function within if - every 30 seconds
-    Serial.println("==== 30 full ====");
+  if(tevent.Check(500, 0)) {          // function within if - every 0,5 seconds
+    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
   }
 
   if(tevent.Check(5000, 500)) {      // Print the runtimes as example (will not show too much as there is almost no runtime. Wie im readme erwähnt wird die runtime von if(tevent.Check..) nicht berechnet.)

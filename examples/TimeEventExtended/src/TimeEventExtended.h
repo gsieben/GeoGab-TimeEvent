@@ -2,7 +2,7 @@
  * @file TimeEventExtended.h
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 1.0.0
+ * @version 1.0.1
  * @date 23-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
