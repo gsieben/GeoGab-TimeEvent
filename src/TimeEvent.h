@@ -2,7 +2,7 @@
  * @file TimeEvent.h
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 0.1.0
+ * @version 1.0.2
  * @date 19-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
@@ -17,7 +17,7 @@
 
 using namespace std;
 
-#define TIMEEVENT_VERSION "0.1.0"
+#define TIMEEVENT_VERSION "1.0.2"
 
 enum  {
   TE_ERROR_NONE=0,                        // 0000 0000: Perfect :-)           
@@ -27,20 +27,20 @@ enum  {
 
 class TimeEvent {
     public:
-    uint8_t error;                      // Error Number
-    uint8_t SlotIndex=0;                // Index of the actual slot
+    uint8_t error;                        // Error Number
+    uint8_t SlotIndex=0;                  // Index of the actual slot
+    vector<uint32_t> Runtime;             // Init: 1 - Previous runtime of the slot
 
-    TimeEvent(uint8_t size);            // Constructor with timer slots
+    TimeEvent(uint8_t size);              // Constructor with timer slots
 
     void Reset();
     bool Check(const uint16_t &every, const uint16_t &offset, function<void (void)> funct);
     bool Check(const uint16_t &every, const uint16_t &offset);
     
-
     private:
-    uint8_t SlotMax;                    // Init: 1 - Maximal Slots available (must be defined while object creation)
-    vector<uint32_t> PrevStamp;         // Init: 2 - Previous runtime of the slot
-    uint32_t ActStamp;                  // actual loop time stamp
+    uint8_t SlotMax;                      // Init: 2 - Maximal Slots available (must be defined while object creation)
+    vector<uint32_t> PrevStamp;           // Init: 3 - Previous runtime of the slot
+    uint32_t ActStamp;                    // actual loop time stamp
 };
 
 

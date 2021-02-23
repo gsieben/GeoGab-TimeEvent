@@ -2,7 +2,7 @@
  * @file TimeEvent.cpp
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 0.1.0
+ * @version 1.0.2
  * @date 19-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
@@ -11,7 +11,7 @@
 
 #include <TimeEvent.h>
 
-TimeEvent::TimeEvent(uint8_t size) : SlotMax (size), PrevStamp (size)  {
+TimeEvent::TimeEvent(uint8_t size) : Runtime (size), SlotMax (size), PrevStamp (size)  {
 }
 
 /**
@@ -35,6 +35,7 @@ bool TimeEvent::Check(const uint16_t &every, const uint16_t &offset, function<vo
     ActStamp=millis();
     if (ActStamp - offset - PrevStamp[SlotIndex] >= every) {
         funct();                                                    // Execute the function
+        Runtime[SlotIndex]=millis()-ActStamp;                       // Rollover is ignored as this happens once ever 45 days
         PrevStamp[SlotIndex] = ActStamp - offset;
     }
     SlotIndex++;

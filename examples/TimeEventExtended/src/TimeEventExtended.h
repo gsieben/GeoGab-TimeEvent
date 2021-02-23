@@ -1,15 +1,15 @@
 /**
- * @file TimeEventExample.h
+ * @file TimeEventExtended.h
  * @author Gabriel A. Sieben (gsieben@geogab.net)
  * @brief 
- * @version 0.0.1
- * @date 19-February-2021
+ * @version 1.0.0
+ * @date 23-February-2021
  * 
  * @copyright (c) 2021 - MIT License (see license file)
  * 
  */
-#ifndef TimeEventExample_h
-#define TimeEventExample_h
+#ifndef TimeEventExtended_h
+#define TimeEventExtended_h
 
 #include <Arduino.h>
 #include <TimeEvent.h>
