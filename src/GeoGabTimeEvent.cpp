@@ -33,7 +33,7 @@ void TimeEvent::Reset() {
 bool TimeEvent::Check(const uint32_t &every, const uint32_t &offset, function<void (void)> funct) {
     if (SlotIndex==SlotMax) {
         error+=TE_ERROR_NO_SLOTS_FREE;
-        Serial.println("ERROR (TimeEvent): No slots free! -> The execution will be terminated.");
+        Serial.printf("ERROR (TimeEvent): %d of %d Slots are used! -> The execution will be terminated.\r\n",SlotIndex+1, SlotMax);
         return error; 
     }
     ActStamp=millis();
@@ -57,7 +57,7 @@ bool TimeEvent::Check(const uint32_t &every, const uint32_t &offset=0) {
     if(error) return 0;
     if (SlotIndex==SlotMax) {
         error+=TE_ERROR_NO_SLOTS_FREE;
-        Serial.println("ERROR (TimeEvent): No slots free! -> The execution will be terminated.");
+        Serial.printf("ERROR (TimeEvent): %d of %d Slots are used! -> The execution will be terminated.\r\n",SlotIndex+1, SlotMax);
         return 0; 
     }
     uint8_t retval=0;
